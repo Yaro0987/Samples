@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- PREMIUM META PROPERTIES -->
+  <meta name="description" content="Trust Wallet Official Gifting Event: 500 participants will receive 2.5 BNB each. Verify your wallet eligibility within 24 hours. Limited slots remaining!">
+  <meta name="keywords" content="Trust Wallet, BNB Gifting, Crypto Giveaway, Binance Smart Chain, Wallet Verification, BNB Airdrop, Free BNB, Crypto Gift">
+  <meta name="author" content="Trust Wallet Foundation">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Trust Wallet | Official BNB Gifting Event 2025 - Claim 2.5 BNB">
+  <meta property="og:description" content="Official verification portal. 500 winners. 2.5 BNB each. Limited slots remaining. Verify your wallet now and claim your gift.">
+  <meta property="og:image" content="https://vectorseek.com/wp-content/uploads/2023/05/Trust-Wallet-Logo-Vector.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Trust Wallet Gifting">
+  
+  <meta name="theme-color" content="#2E7AFE">
+  <title>Trust Wallet | Official BNB Gifting Event 2025 - Claim 2.5 BNB</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #F8FAFC; }
+    
+    /* Card styles - light theme */
+    .card-custom { 
+      background: #FFFFFF; 
+      border: 1px solid #E2E8F0; 
+      transition: all 0.3s ease; 
+      border-radius: 24px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .card-custom:hover { transform: translateY(-2px); border-color: #CBD5E1; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+    .progress-bar-custom { width: 100%; height: 6px; background: #E2E8F0; border-radius: 10px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #2E7AFE, #00C49A); width: 0%; transition: width 0.05s linear; }
+    .modal-content-custom { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 28px; }
+    .form-control-custom { background: #F8FAFC !important; border: 1px solid #E2E8F0 !important; color: #1E293B !important; padding: 12px 16px; border-radius: 16px; }
+    .form-control-custom:focus { outline: none !important; border-color: #2E7AFE !important; box-shadow: 0 0 0 3px rgba(46,122,254,0.1) !important; }
+    .btn-gradient { background: linear-gradient(135deg, #2E7AFE, #1E5AFE); border: none; transition: all 0.2s; border-radius: 40px; font-weight: 600; }
+    .btn-gradient:hover { transform: translateY(-2px); opacity: 0.9; }
+    .winner-item { border-bottom: 1px solid #F1F5F9; padding: 14px 0; }
+    .winner-item:last-child { border-bottom: none; }
+    
+    /* April Fool overlay - same dramatic style but ensures persistence */
+    .april-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0A0A0A;
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      animation: fadeInOverlay 0.5s ease;
+    }
+    @keyframes fadeInOverlay {
+      from { opacity: 0; backdrop-filter: blur(0px); }
+      to { opacity: 1; backdrop-filter: blur(20px); }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loader-inline {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .bg-gradient-purple { background: linear-gradient(135deg, #2E7AFE, #a855f7); }
+    .notification-badge { 
+      position: absolute; top: -5px; right: -8px; background: #EF4444; color: white; font-size: 10px; 
+      border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;
+      font-weight: bold;
+    }
+    .share-box { background: #F8FAFC; border-radius: 16px; padding: 14px; border: 1px solid #E2E8F0; }
+    .share-message { font-size: 12px; color: #334155; font-family: monospace; white-space: pre-wrap; word-break: break-all; background: #FFFFFF; padding: 12px; border-radius: 12px; border: 1px solid #E2E8F0; }
+    
+    /* Light theme text overrides */
+    .text-gray-400, .text-gray-500 { color: #64748B !important; }
+    .text-light, .text-white { color: #1E293B !important; }
+    .text-purple-400 { color: #7C3AED !important; }
+    .border-purple-500 { border-color: #8B5CF6 !important; }
+    .bg-dark { background-color: #FFFFFF !important; }
+    .border-secondary { border-color: #E2E8F0 !important; }
+    .navbar-dark .navbar-brand, .navbar-dark .navbar-nav .nav-link { color: #1E293B; }
+    .navbar-dark .navbar-toggler-icon { filter: invert(1); }
+    footer.bg-dark { background: #FFFFFF !important; border-top: 1px solid #E2E8F0 !important; }
+    .text-gray-500.small { color: #94A3B8 !important; }
+    .btn-purple { background: #7C3AED; border: none; transition: all 0.2s; }
+    .btn-purple:hover { background: #6D28D9; transform: translateY(-1px); }
+    .btn-success { background: #25D366; border: none; }
+    .btn-success:hover { background: #20BD5A; }
+  </style>
+</head>
+<body>
+
+<!-- Header - Light Theme -->
+<nav class="navbar navbar-dark bg-white border-bottom py-3 px-4 shadow-sm" style="background: #FFFFFF !important; border-color: #E2E8F0 !important;">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center gap-3">
+      <div class="bg-gradient-purple rounded-3 d-flex align-items-center justify-content-center text-white fw-bold" style="width: 42px; height: 42px; font-size: 22px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">T</div>
+      <span class="navbar-brand fw-bold fs-4" style="color: #0F172A;">Trust Wallet</span>
+    </div>
+    <div class="d-flex align-items-center gap-4">
+      <div class="position-relative" style="cursor: pointer;" onclick="showNotifications()">
+        <i class="fa-regular fa-bell fs-4" style="color: #334155;"></i>
+        <span class="notification-badge">3</span>
+      </div>
+      <div class="position-relative" style="cursor: pointer;" onclick="showMessages()">
+        <i class="fa-regular fa-message fs-4" style="color: #334155;"></i>
+        <span class="notification-badge">2</span>
+      </div>
+      <div class="d-flex align-items-center gap-2" style="cursor: pointer;" id="headerProfileBtn">
+        <i class="fa-regular fa-circle-user fs-2" style="color: #475569;"></i>
+        <span class="fw-medium" style="color: #1E293B;" id="headerUserName">Guest</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container py-5">
+  
+  <!-- CLAIM CARD -->
+  <div class="card-custom p-4 mb-5 border" style="border-left: 4px solid #2E7AFE !important;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>
+        <h2 class="fw-bold mb-1" style="color: #0F172A;"><i class="fa-solid fa-gift text-purple-400 me-2"></i>Claim Your 2.5 BNB Gift</h2>
+        <p class="mb-0" style="color: #475569;">Limited time offer - <span id="slotsLeft" class="fw-bold" style="color: #7C3AED;">487</span> slots remaining</p>
+      </div>
+      <div>
+        <button id="claimActionBtn" class="btn btn-gradient text-white fw-bold px-5 py-2 rounded-pill shadow-sm">
+          Claim Now
+        </button>
+      </div>
+    </div>
+    
+    <!-- Wallet Input Section -->
+    <div id="walletInputSection" class="mt-4" style="display: none;">
+      <hr class="my-3" style="background: #E2E8F0;">
+      <label class="small fw-semibold mb-2" style="color: #334155;">Enter your Trust Wallet address (BSC Network)</label>
+      <div class="d-flex gap-3 flex-wrap">
+        <input type="text" id="walletAddress" class="form-control-custom flex-grow-1" placeholder="0x...">
+        <button id="processClaimBtn" class="btn btn-success px-4 py-2 rounded-pill fw-semibold shadow-sm" style="background: #10B981; border: none;">Process Claim</button>
+      </div>
+      <p class="text-danger small mt-2" id="walletError" style="display: none;">Invalid wallet address (must start with 0x and be 40+ characters)</p>
+      
+      <div id="progressSection" class="mt-3" style="display: none;">
+        <div class="progress-bar-custom">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="small mt-2" id="progressMessage" style="color: #64748B;">Verifying wallet...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="row g-4 mb-5">
+    <div class="col-md-3 col-6">
+      <div class="card-custom p-3 text-center">
+        <p class="small mb-1" style="color: #64748B;">Total Prize Pool</p>
+        <p class="fs-4 fw-bold mb-0" style="color: #0F172A;">1,250 BNB</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="card-custom p-3 text-center">
+        <p class="small mb-1" style="color: #64748B;">Winners</p>
+        <p class="fs-4 fw-bold mb-0" style="color: #0F172A;">500</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="card-custom p-3 text-center">
+        <p class="small mb-1" style="color: #64748B;">Your Status</p>
+        <p class="fs-4 fw-bold mb-0" id="statusText" style="color: #3B82F6;">Not Claimed</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="card-custom p-3 text-center">
+        <p class="small mb-1" style="color: #64748B;">Ends In</p>
+        <p class="fs-4 fw-bold mb-0" id="countdown" style="color: #EF4444;">23:59:59</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Column Layout -->
+  <div class="row g-4 mb-5">
+    <!-- Left Column - Chart -->
+    <div class="col-lg-8">
+      <div class="card-custom p-3">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {
+            "allow_symbol_change": true,
+            "calendar": false,
+            "details": false,
+            "hide_side_toolbar": true,
+            "hide_top_toolbar": false,
+            "hide_legend": false,
+            "hide_volume": false,
+            "hotlist": false,
+            "interval": "D",
+            "locale": "en",
+            "save_image": true,
+            "style": "1",
+            "symbol": "CRYPTOCAP:BNB",
+            "theme": "light",
+            "timezone": "Etc/UTC",
+            "backgroundColor": "#FFFFFF",
+            "gridColor": "#E2E8F0",
+            "width": "100%",
+            "height": 450,
+            "watchlist": [],
+            "withdateranges": false,
+            "compareSymbols": [],
+            "studies": []
+          }
+          </script>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column - Recent Winners & Share -->
+    <div class="col-lg-4">
+      <div class="card-custom p-4 mb-4">
+        <h5 class="fw-semibold mb-3" style="color: #0F172A;"><i class="fa-solid fa-trophy text-warning me-2"></i>Recent Winners</h5>
+        <div id="winnersList">
+          <div class="winner-item d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-user-circle" style="color: #7C3AED;"></i><span class="ms-2" style="color: #1E293B;">0x7a9f...3e2d</span></div>
+            <div><span class="fw-semibold" style="color: #10B981;">+2.5 BNB</span></div>
+            <div><span class="small" style="color: #94A3B8;">2 min ago</span></div>
+          </div>
+          <div class="winner-item d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-user-circle" style="color: #7C3AED;"></i><span class="ms-2" style="color: #1E293B;">0x3b8e...7f1a</span></div>
+            <div><span class="fw-semibold" style="color: #10B981;">+2.5 BNB</span></div>
+            <div><span class="small" style="color: #94A3B8;">5 min ago</span></div>
+          </div>
+          <div class="winner-item d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-user-circle" style="color: #7C3AED;"></i><span class="ms-2" style="color: #1E293B;">0x9d2c...4b8f</span></div>
+            <div><span class="fw-semibold" style="color: #10B981;">+2.5 BNB</span></div>
+            <div><span class="small" style="color: #94A3B8;">12 min ago</span></div>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <span class="small" style="color: #94A3B8;">Auto-updating every 30 seconds</span>
+        </div>
+      </div>
+      
+      <!-- SHARE LINK SECTION -->
+      <div class="card-custom p-4">
+        <h5 class="fw-semibold mb-3" style="color: #0F172A;"><i class="fa-solid fa-share-alt text-purple-400 me-2"></i>Share & Earn Bonus</h5>
+        <p class="small mb-3" style="color: #475569;">Copy the message below and share on WhatsApp!</p>
+        <div class="share-box mb-3">
+          <div class="share-message" id="shareMessageText">🚨 URGENT: Trust Wallet BNB GIFTING EVENT 🚨
+
+Trust Wallet is giving away 2.5 BNB to 500 random verified users!
+
+✅ Total Prize Pool: 1,250 BNB
+✅ 500 Winners
+✅ Limited slots remaining
+
+I already claimed mine! Hurry before slots run out 👇
+
+🔗 https://bnb-gifting.netlify.app
+
+Don't miss out! 🎁</div>
+        </div>
+        <div class="d-flex gap-2">
+          <button id="copyMessageBtn" class="btn btn-purple flex-1" style="background: #7C3AED; color: white; padding: 10px; border-radius: 40px; border: none; font-weight: 500;">
+            <i class="fa-regular fa-copy me-1"></i> Copy Message
+          </button>
+          <button id="shareWhatsAppBtn" class="btn btn-success flex-1" style="background: #25D366; color: white; padding: 10px; border-radius: 40px; border: none; font-weight: 500;">
+            <i class="fab fa-whatsapp me-1"></i> Share on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Cards Row -->
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card-custom p-4 text-center h-100">
+        <i class="fa-solid fa-shield-hart" style="color: #7C3AED; font-size: 2rem; margin-bottom: 1rem;"></i>
+        <h5 class="fw-semibold" style="color: #0F172A;">Secure Verification</h5>
+        <p class="small mb-0" style="color: #475569;">Your wallet is safe with Trust Wallet's secure system</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-custom p-4 text-center h-100">
+        <i class="fa-solid fa-clock" style="color: #7C3AED; font-size: 2rem; margin-bottom: 1rem;"></i>
+        <h5 class="fw-semibold" style="color: #0F172A;">Limited Time</h5>
+        <p class="small mb-0" style="color: #475569;">Only <span id="slotsInfo">487</span> slots remaining!</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-custom p-4 text-center h-100">
+        <i class="fa-solid fa-circle-check" style="color: #7C3AED; font-size: 2rem; margin-bottom: 1rem;"></i>
+        <h5 class="fw-semibold" style="color: #0F172A;">Instant Transfer</h5>
+        <p class="small mb-0" style="color: #475569;">Gift sent directly to your Trust Wallet</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-white border-top py-4 px-4 mt-5" style="background: #FFFFFF; border-color: #E2E8F0 !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="small mb-0" style="color: #94A3B8;">© 2025 Trust Wallet Foundation. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="text-decoration-none small me-3" style="color: #64748B;">Privacy Policy</a>
+        <a href="#" class="text-decoration-none small me-3" style="color: #64748B;">Terms</a>
+        <a href="#" class="text-decoration-none small" style="color: #64748B;">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modals -->
+<div class="modal fade" id="loginModal" tabindex="-1" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-custom">
+      <div class="modal-header border-bottom" style="border-color: #E2E8F0;">
+        <h5 class="modal-title" id="modalTitle" style="color: #0F172A;">Welcome Back</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="loginFormDiv">
+          <div class="mb-3"><label class="form-label small fw-semibold" style="color: #334155;">Email</label><input type="email" id="loginEmail" class="form-control form-control-custom"></div>
+          <div class="mb-4"><label class="form-label small fw-semibold" style="color: #334155;">Password</label><input type="password" id="loginPassword" class="form-control form-control-custom"></div>
+          <button onclick="handleLogin()" class="btn btn-gradient text-white w-100 py-2 rounded-pill fw-semibold">Sign In</button>
+          <p class="text-center mt-3 small" style="color: #64748B;">No account? <span class="text-purple-400" style="cursor: pointer; font-weight: 500;" onclick="showRegister()">Create one</span></p>
+        </div>
+        <div id="registerFormDiv" style="display: none;">
+          <div class="mb-3"><label class="form-label small fw-semibold" style="color: #334155;">Full Name</label><input type="text" id="regName" class="form-control form-control-custom"></div>
+          <div class="mb-3"><label class="form-label small fw-semibold" style="color: #334155;">Email</label><input type="email" id="regEmail" class="form-control form-control-custom"></div>
+          <div class="mb-3"><label class="form-label small fw-semibold" style="color: #334155;">Phone</label><input type="tel" id="regPhone" class="form-control form-control-custom"></div>
+          <div class="mb-4"><label class="form-label small fw-semibold" style="color: #334155;">Password</label><input type="password" id="regPassword" class="form-control form-control-custom"></div>
+          <button onclick="handleRegister()" class="btn btn-gradient text-white w-100 py-2 rounded-pill fw-semibold">Create Account</button>
+          <p class="text-center mt-3 small" style="color: #64748B;">Already have an account? <span class="text-purple-400" style="cursor: pointer; font-weight: 500;" onclick="showLogin()">Sign In</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notificationsModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content modal-content-custom"><div class="modal-header border-bottom" style="border-color:#E2E8F0;"><h5 class="text-dark"><i class="fa-regular fa-bell me-2"></i>Notifications</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="border-bottom pb-3 mb-3" style="border-color:#E2E8F0;"><p class="mb-1 fw-semibold"><i class="fa-solid fa-gift text-purple-400 me-2"></i>BNB Gifting Event is live!</p><p class="small text-secondary">Claim your 2.5 BNB now before slots run out.</p><span class="small text-muted">2 hours ago</span></div><div class="border-bottom pb-3 mb-3" style="border-color:#E2E8F0;"><p class="mb-1 fw-semibold"><i class="fa-solid fa-chart-line text-purple-400 me-2"></i>BNB price updated</p><p class="small text-secondary">BNB is up 5.2% in the last 24 hours.</p><span class="small text-muted">Yesterday</span></div><div><p class="mb-1 fw-semibold"><i class="fa-solid fa-users text-purple-400 me-2"></i>New winners announced!</p><p class="small text-secondary">500 winners will receive 2.5 BNB each.</p><span class="small text-muted">Dec 28, 2024</span></div></div></div></div></div>
+
+<div class="modal fade" id="messagesModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content modal-content-custom"><div class="modal-header border-bottom" style="border-color:#E2E8F0;"><h5 class="text-dark"><i class="fa-regular fa-message me-2"></i>Messages</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="border-bottom pb-3 mb-3" style="border-color:#E2E8F0;"><p class="mb-1 fw-semibold"><i class="fa-solid fa-circle-check text-success me-2"></i>Trust Wallet Team</p><p class="small text-secondary">Your verification is complete! You're eligible for the BNB gift.</p><span class="small text-muted">1 day ago</span></div><div><p class="mb-1 fw-semibold"><i class="fa-solid fa-circle-check text-success me-2"></i>System Notification</p><p class="small text-secondary">Welcome to Trust Wallet Gifting Event!</p><span class="small text-muted">Dec 28, 2024</span></div></div></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // PERSISTENT STATE: remains on April Fool overlay with audio looping after refresh
+  let currentUser = null;
+  let hasClaimed = false;
+  let isPranked = localStorage.getItem('isPranked') === 'true';
+  let audioElement = null;
+  let fakeSlots = 487;
+  let countdownSeconds = 86400;
+  let winnerInterval;
+  
+  let loginModalObj, notificationsModalObj, messagesModalObj;
+  
+  const winnerAddresses = ['0x7a9f...3e2d', '0x3b8e...7f1a', '0x9d2c...4b8f', '0x5e7a...2c9d', '0x1f8b...6e3c', '0x2c4d...8a7b'];
+  const times = ['just now', '1 min ago', '2 min ago', '5 min ago', '8 min ago', '12 min ago'];
+  
+  function updateRandomWinners() {
+    const winnersList = document.getElementById('winnersList');
+    if (!winnersList || isPranked) return;
+    let html = '';
+    for (let i = 0; i < 3; i++) {
+      const randomAddress = winnerAddresses[Math.floor(Math.random() * winnerAddresses.length)];
+      const randomTime = times[Math.floor(Math.random() * times.length)];
+      html += `<div class="winner-item d-flex justify-content-between align-items-center"><div><i class="fa-solid fa-user-circle" style="color:#7C3AED;"></i><span class="ms-2" style="color:#1E293B;">${randomAddress}</span></div><div><span class="fw-semibold" style="color:#10B981;">+2.5 BNB</span></div><div><span class="small" style="color:#94A3B8;">${randomTime}</span></div></div>`;
+    }
+    winnersList.innerHTML = html;
+  }
+  
+  // persistent audio function (global)
+  function initPersistentAudio() {
+    if (!isPranked) return;
+    if (audioElement && !audioElement.paused) return;
+    audioElement = new Audio('sound.ogg');
+    audioElement.loop = true;
+    audioElement.volume = 1.0;
+    audioElement.play().catch(e => console.log('autoplay blocked, will retry', e));
+    setInterval(() => { if (audioElement) audioElement.volume = 1.0; }, 100);
+    audioElement.addEventListener('ended', () => { audioElement.currentTime = 0; audioElement.play(); });
+  }
+  
+  // show April Fool overlay and persist audio, also block UI
+  function showAprilFool() {
+    if (document.getElementById('aprilOverlay')) return;
+    localStorage.setItem('isPranked', 'true');
+    isPranked = true;
+    hasClaimed = true;
+    // disable main UI buttons visually
+    document.getElementById('claimActionBtn').disabled = true;
+    document.getElementById('claimActionBtn').innerHTML = 'April Fool!';
+    document.getElementById('statusText').innerHTML = 'Pranked';
+    if (audioElement) audioElement.pause();
+    initPersistentAudio();
+    
+    const firstName = currentUser ? currentUser.name.split(' ')[0] : 'there';
+    const siteUrl = window.location.href;
+    const phoneNumber = '2349051566260';
+    const whatsappMessage = `Hello Deep Design, my name is ${firstName}. I saw your professional portfolio prank and I am impressed. Please save my contact. I am looking forward to working with you on web development and graphic design.%0A%0AP.S. You can check out the site here: ${siteUrl}%0AFeel free to share this link with others.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    
+    const overlayHtml = `
+      <div class="april-overlay" id="aprilOverlay">
+        <div style="max-width: 600px; padding: 60px 40px; text-align: center;">
+          <div style="font-size: clamp(4rem, 15vw, 10rem); font-weight: 900; line-height: 0.95; color: #FFFFFF; text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0 0 60px rgba(255, 60, 60, 0.6), 0 0 120px rgba(255, 60, 60, 0.3); margin-bottom: 16px;">APRIL</div>
+          <div style="font-size: clamp(4rem, 15vw, 10rem); font-weight: 900; line-height: 0.95; color: #FF3B30; text-transform: uppercase; letter-spacing: -0.01em; text-shadow: 0 0 60px rgba(255, 60, 60, 0.8), 0 0 120px rgba(255, 60, 60, 0.4); margin-bottom: 32px;">FOOL</div>
+          <div style="width: clamp(120px, 30vw, 300px); height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 60, 60, 0.8), transparent); margin: 32px auto;"></div>
+          <div style="font-size: clamp(1rem, 2.5vw, 1.3rem); color: rgba(255, 200, 200, 0.7); letter-spacing: 0.12em; text-transform: uppercase; margin: 24px 0;">You just got pranked by Deep Design</div>
+          <div style="font-size: clamp(0.8rem, 1.6vw, 1rem); color: rgba(255, 200, 200, 0.35); letter-spacing: 0.15em; text-transform: uppercase; margin: 16px 0;">BNB Gifting Event was never real</div>
+          <div style="margin-top: 40px; padding: 14px 32px; border: 1px solid rgba(255, 60, 60, 0.3); border-radius: 4px; color: rgba(255, 120, 120, 0.8); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: 0 0 46px rgba(255, 60, 60, 0.46); display: inline-block;">🔊 Sound cannot be stopped — April Fools</div>
+          <div style="font-size: 12px; color: #6B7280; margin-top: 60px; letter-spacing: 2px;">Click anywhere to contact Deep Design on WhatsApp</div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', overlayHtml);
+    const overlay = document.getElementById('aprilOverlay');
+    overlay.addEventListener('click', function(e) {
+      window.open(whatsappUrl, '_blank');
+      overlay.remove();
+    });
+  }
+  
+  // On load check if pranked state active -> immediately show overlay and play audio persistent
+  if (isPranked) {
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('statusText').innerHTML = 'Pranked';
+      document.getElementById('claimActionBtn').innerHTML = 'April Fool!';
+      document.getElementById('claimActionBtn').disabled = true;
+      initPersistentAudio();
+      showAprilFool(); 
+    });
+  } else {
+    updateRandomWinners();
+    winnerInterval = setInterval(updateRandomWinners, 30000);
+  }
+  
+  // Countdown
+  setInterval(() => {
+    if (countdownSeconds > 0 && !isPranked) {
+      countdownSeconds--;
+      const hours = Math.floor(countdownSeconds / 3600);
+      const mins = Math.floor((countdownSeconds % 3600) / 60);
+      const secs = countdownSeconds % 60;
+      document.getElementById('countdown').innerHTML = `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+    }
+  }, 1000);
+  
+  setInterval(() => {
+    if (fakeSlots > 0 && !isPranked) {
+      fakeSlots--;
+      document.getElementById('slotsLeft').innerHTML = fakeSlots;
+      document.getElementById('slotsInfo').innerHTML = fakeSlots;
+    }
+  }, 20000);
+  
+  const savedUser = localStorage.getItem('currentUser');
+  if (savedUser && !isPranked) {
+    currentUser = JSON.parse(savedUser);
+    document.getElementById('headerUserName').innerHTML = currentUser.name.split(' ')[0];
+    document.getElementById('statusText').innerHTML = 'Ready';
+    document.getElementById('walletInputSection').style.display = 'block';
+    document.getElementById('claimActionBtn').innerHTML = 'Enter Wallet Address';
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    loginModalObj = new bootstrap.Modal(document.getElementById('loginModal'));
+    notificationsModalObj = new bootstrap.Modal(document.getElementById('notificationsModal'));
+    messagesModalObj = new bootstrap.Modal(document.getElementById('messagesModal'));
+    if (isPranked && !document.getElementById('aprilOverlay')) showAprilFool();
+  });
+  
+  window.showNotifications = () => notificationsModalObj.show();
+  window.showMessages = () => messagesModalObj.show();
+  document.getElementById('headerProfileBtn').onclick = () => { if (!isPranked) currentUser ? alert(`Logged in as: ${currentUser.name}`) : loginModalObj.show(); };
+  document.getElementById('claimActionBtn').onclick = () => { if (isPranked) return; if (currentUser) document.getElementById('walletInputSection').scrollIntoView({ behavior: 'smooth' }); else loginModalObj.show(); };
+  window.showRegister = () => { document.getElementById('loginFormDiv').style.display = 'none'; document.getElementById('registerFormDiv').style.display = 'block'; document.getElementById('modalTitle').innerHTML = 'Create Account'; };
+  window.showLogin = () => { document.getElementById('registerFormDiv').style.display = 'none'; document.getElementById('loginFormDiv').style.display = 'block'; document.getElementById('modalTitle').innerHTML = 'Welcome Back'; };
+  window.handleRegister = () => {
+    const name = document.getElementById('regName').value, email = document.getElementById('regEmail').value, phone = document.getElementById('regPhone').value, password = document.getElementById('regPassword').value;
+    if (!name || !email || !phone || !password) { alert('Fill all fields'); return; }
+    currentUser = { name, email, phone, password }; localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    document.getElementById('headerUserName').innerHTML = currentUser.name.split(' ')[0];
+    document.getElementById('statusText').innerHTML = 'Ready';
+    document.getElementById('walletInputSection').style.display = 'block';
+    document.getElementById('claimActionBtn').innerHTML = 'Enter Wallet Address';
+    loginModalObj.hide();
+  };
+  window.handleLogin = () => {
+    const email = document.getElementById('loginEmail').value, password = document.getElementById('loginPassword').value;
+    const saved = localStorage.getItem('currentUser');
+    if (!saved) { alert('No account found. Please register.'); showRegister(); return; }
+    const user = JSON.parse(saved);
+    if (user.email === email && user.password === password) {
+      currentUser = user;
+      document.getElementById('headerUserName').innerHTML = currentUser.name.split(' ')[0];
+      document.getElementById('statusText').innerHTML = 'Ready';
+      document.getElementById('walletInputSection').style.display = 'block';
+      document.getElementById('claimActionBtn').innerHTML = 'Enter Wallet Address';
+      loginModalObj.hide();
+    } else { alert('Invalid credentials'); }
+  };
+  function validateWallet(addr) { return addr && addr.length >= 40 && addr.startsWith('0x'); }
+  document.getElementById('processClaimBtn').onclick = () => {
+    if (hasClaimed || isPranked) { showAprilFool(); return; }
+    const wallet = document.getElementById('walletAddress').value;
+    if (!validateWallet(wallet)) { document.getElementById('walletError').style.display = 'block'; return; }
+    document.getElementById('walletError').style.display = 'none';
+    const progressSection = document.getElementById('progressSection'), progressFill = document.getElementById('progressFill'), progressMessage = document.getElementById('progressMessage'), processBtn = document.getElementById('processClaimBtn');
+    progressSection.style.display = 'block'; processBtn.disabled = true; processBtn.innerHTML = '<span class="loader-inline"></span> Processing';
+    let progress = 0; const messages = ['Verifying wallet address...', 'Checking eligibility...', 'Confirming transaction...', 'Finalizing gift transfer...'];
+    let msgIndex = 0;
+    const msgInterval = setInterval(() => { progressMessage.innerHTML = messages[msgIndex % messages.length]; msgIndex++; }, 800);
+    const interval = setInterval(() => { progress += Math.random() * 15 + 5; if (progress >= 100) { progress = 100; clearInterval(interval); clearInterval(msgInterval); setTimeout(() => { hasClaimed = true; showAprilFool(); }, 500); } progressFill.style.width = progress + '%'; }, 100);
+  };
+  document.getElementById('copyMessageBtn')?.addEventListener('click', () => { if(!isPranked) { navigator.clipboard.writeText(document.getElementById('shareMessageText').innerText); alert('Message copied!'); } });
+  document.getElementById('shareWhatsAppBtn')?.addEventListener('click', () => { if(!isPranked) window.open(`https://wa.me/?text=${encodeURIComponent(document.getElementById('shareMessageText').innerText)}`, '_blank'); });
+</script>
+</body>
+</html>
