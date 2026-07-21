@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Fitness Image Fetcher</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; }
+    .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 30px 40px; text-align: center; border-bottom: 3px solid #e94560; }
+    .header h1 { font-size: 28px; margin-bottom: 8px; }
+    .header p { color: #aaa; font-size: 14px; }
+    .header .stats { margin-top: 12px; font-size: 13px; color: #888; }
+    .header .stats span { color: #e94560; font-weight: bold; font-size: 16px; }
+    .toolbar { padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; background: #111; border-bottom: 1px solid #222; }
+    .toolbar .source { color: #888; font-size: 13px; }
+    .toolbar .source a { color: #e94560; text-decoration: none; }
+    .toolbar .source a:hover { text-decoration: underline; }
+    .download-all { background: #e94560; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: background 0.2s; }
+    .download-all:hover { background: #c73550; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 30px 40px; }
+    .img-card { background: #161616; border-radius: 10px; overflow: hidden; border: 1px solid #222; transition: transform 0.2s, border-color 0.2s; }
+    .img-card:hover { transform: translateY(-4px); border-color: #e94560; }
+    .img-card img { width: 100%; height: 200px; object-fit: cover; display: block; background: #222; }
+    .img-info { padding: 14px; }
+    .img-name { font-size: 12px; color: #aaa; word-break: break-all; margin-bottom: 10px; line-height: 1.4; }
+    .download-btn { display: inline-block; background: #e94560; color: #fff; text-decoration: none; padding: 6px 16px; border-radius: 5px; font-size: 12px; font-weight: 600; transition: background 0.2s; }
+    .download-btn:hover { background: #c73550; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Sky Fitness Image Fetcher</h1>
+    <p>Images fetched from skyfitnessng.com</p>
+    <div class="stats">Found <span id="counter">0</span> images</div>
+  </div>
+  <div class="toolbar">
+    <div class="source">Source: <a href="https://www.skyfitnessng.com/" target="_blank">www.skyfitnessng.com</a></div>
+    <button class="download-all" onclick="downloadAll()">Download All</button>
+  </div>
+  <div class="grid" id="image-grid"></div>
+  <script src="img.js"></script>
+</body>
+</html>
