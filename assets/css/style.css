@@ -8004,17 +8004,11 @@ body.light-d .ec-action-item:hover {
 body.light-d .ec-hamburger-btn span {
   background: #e0e0e0;
 }
-body.light-d .ec-logo img {
-  filter: brightness(0) invert(1);
-}
 body.light-d .ec-mobile-nav {
   background: #16213e;
 }
 body.light-d .ec-mobile-nav-header {
   border-bottom-color: #ea2127;
-}
-body.light-d .ec-mobile-nav-header img {
-  filter: brightness(0) invert(1);
 }
 body.light-d .ec-mobile-nav-close {
   color: #e0e0e0;
