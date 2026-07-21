@@ -384,6 +384,7 @@ jQuery(document).ready(function ($) {
 
         window.addEventListener('scroll', function(e) {
 
+        if (!header) return;
         last_scroll_position = window.scrollY;
 
 
